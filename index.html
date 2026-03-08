@@ -1,62 +1,370 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-
-    <header class="hero-section">
-        <div class="container">
-            <img src="mmm.png" alt="my pic" class="profile-img">
-            <h1>Moamen Mahrous</h1>
-            <p class="hero-text">Hi, I'm a passionate developer
-                who loves turning complex problems into simple, beautiful code.
-                I thrive on challenges and I’m always building something new. </p>
-        </div>
-    </header>
-
-    <section class="about-section container">
-        <h2>about me</h2>
-        <p>I spend my time learning new frameworks and pushing my limits with every project.</p>
-    </section>
-
-    <section class="projects-section container">
-        <h2>My projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>project name</h3>
-                <p> describtion</p></p>
-                <a href="#" class="project-link"> show </a>
-            </div>
+    <title>Moamen Mharous | Backend SoftWarre Engineer.</title>
     
-    </section>
+    <!-- خطوط عربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- تخصيص خط Tailwind ليعمل مع Tajawal -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
-    <section class="skills-section container">
-        <h2>My skills</h2>
-        <div class="skills-list">
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <span>C#</span>
-            <span>C++ & C</span>
-            <span>Git & GitHub</span>
-            <span>System Design</span></span>
+    <!-- أيقونات Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- أنماط CSS مخصصة للتأثيرات النباتية -->
+    <style>
+        @keyframes sway {
+            0%, 100% { transform: rotate(-5deg) translateY(0px); }
+            50% { transform: rotate(5deg) translateY(-15px); }
+        }
+        @keyframes sway-reverse {
+            0%, 100% { transform: rotate(5deg) translateY(0px); }
+            50% { transform: rotate(-5deg) translateY(-10px); }
+        }
+        
+        .animate-sway { animation: sway 7s ease-in-out infinite; }
+        .animate-sway-delayed { animation: sway-reverse 9s ease-in-out 2s infinite; }
+        
+        html { scroll-behavior: smooth; }
+        
+        /* شكل هندسي يشبه ورقة الشجر */
+        .leaf-shape {
+            border-radius: 50% 0 50% 0;
+            transition: all 0.5s ease;
+        }
+        .leaf-shape-reverse {
+            border-radius: 0 50% 0 50%;
+            transition: all 0.5s ease;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #ecfdf5; }
+        ::-webkit-scrollbar-thumb { background: #6ee7b7; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #10b981; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-emerald-50 via-green-50/40 to-teal-50 text-emerald-950 font-sans selection:bg-emerald-200 antialiased overflow-x-hidden">
+
+    <!-- خلفيات على شكل أوراق شجر -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute top-10 right-[15%] w-48 h-48 bg-emerald-200/20 backdrop-blur-sm border border-emerald-100/50 leaf-shape animate-sway"></div>
+        <div class="absolute top-[30%] left-[5%] w-32 h-32 bg-teal-200/20 backdrop-blur-sm border border-teal-100/50 leaf-shape-reverse animate-sway-delayed"></div>
+        <div class="absolute bottom-[10%] right-[10%] w-64 h-64 bg-green-200/20 backdrop-blur-sm border border-green-100/50 leaf-shape animate-sway"></div>
+    </div>
+
+    <!-- شريط تنقل علوي احتياطي -->
+    <nav id="navbar" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 opacity-0 -translate-y-10 pointer-events-none">
+        <div class="bg-white/80 backdrop-blur-lg border border-emerald-100 shadow-lg shadow-emerald-900/5 rounded-full px-6 py-3 flex items-center gap-6">
+            <a href="#home" class="nav-link text-sm font-medium transition-colors flex items-center gap-2 text-emerald-700 hover:text-emerald-600">
+                الرئيسية
+            </a>
+            <a href="#about" class="nav-link text-sm font-medium transition-colors flex items-center gap-2 text-emerald-900/60 hover:text-emerald-600">
+                عني
+            </a>
+            <a href="#projects" class="nav-link text-sm font-medium transition-colors flex items-center gap-2 text-emerald-900/60 hover:text-emerald-600">
+                أعمالي
+            </a>
+            <a href="#contact" class="nav-link text-sm font-medium transition-colors flex items-center gap-2 text-emerald-900/60 hover:text-emerald-600">
+                تواصل
+            </a>
         </div>
-    </section>
+    </nav>
 
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="https://github.com/moamenx86"></i> GitHub</a>
-                <a href="#"><i class="www.linkedin.com/in/moamen-mahrous-23a160248"></i> LinkedIn</a>
-                <a href="#"><i class="wa.me/+201065157954"></i> Whatsapp</a>
+    <!-- --- قسم الهيرو المبتكر (القائمة الدائرية) --- -->
+    <section id="home" class="relative min-h-screen flex flex-col items-center justify-center z-10 pt-10">
+        
+        <!-- الحاوية الرئيسية للتفاعل الدائري -->
+        <div class="relative group w-[410px] h-[410px] flex items-center justify-center">
+            
+            <!-- الدائرة الكبيرة (القائمة) - تظهر عند تمرير الماوس -->
+            <div class="absolute inset-0 rounded-full bg-blure backdrop-blur-md border border-emerald-100 shadow-2xl shadow-emerald-200/40 scale-50 opacity-0 group-hover:scale-100 group-hover:opacity-90 transition-all duration-500 ease-out flex items-center justify-center z-10">
+                
+                <!-- إطار نباتي دائري داخلي -->
+                <div class="absolute inset-2 rounded-full border border-emerald-300/40 border-dashed animate-[spin_40s_linear_infinite]"></div>
+                
+                <!-- عناصر القائمة الموزعة دائرياً بالـ Inline CSS -->
+                <!-- x: 0, y: -115 -->
+                <a href="#home" class="absolute flex flex-col items-center justify-center w-16 h-16 rounded-full bg-white border border-emerald-100 shadow-md shadow-emerald-100/50 hover:bg-emerald-50 hover:scale-110 transition-all duration-300 text-emerald-800 hover:text-emerald-600 z-20 group/item" style="transform: translate(0px, -155px)">
+                    <i data-lucide="sprout" class="w-50 h-50 mb-1 group-hover/item:text-emerald-500 transition-colors"></i>
+                    <span class="text-[10px] font-bold">الرئيسية</span>
+                </a>
+                
+                <!-- x: 115, y: 0 -->
+                <a href="#about" class="absolute flex flex-col items-center justify-center w-16 h-16 rounded-full bg-white border border-emerald-100 shadow-md shadow-emerald-100/50 hover:bg-emerald-50 hover:scale-110 transition-all duration-300 text-emerald-800 hover:text-emerald-600 z-20 group/item" style="transform: translate(155px, 0px)">
+                    <i data-lucide="user" class="w-4 h-4 mb-1 group-hover/item:text-emerald-500 transition-colors"></i>
+                    <span class="text-[10px] font-bold">عني</span>
+                </a>
+
+                <!-- x: 0, y: 115 -->
+                <a href="#projects" class="absolute flex flex-col items-center justify-center w-16 h-16 rounded-full bg-white border border-emerald-100 shadow-md shadow-emerald-100/50 hover:bg-emerald-50 hover:scale-110 transition-all duration-300 text-emerald-800 hover:text-emerald-600 z-20 group/item" style="transform: translate(0px, 155px)">
+                    <i data-lucide="briefcase" class="w-4 h-4 mb-1 group-hover/item:text-emerald-500 transition-colors"></i>
+                    <span class="text-[10px] font-bold">أعمالي</span>
+                </a>
+
+                <!-- x: -115, y: 0 -->
+                <a href="#contact" class="absolute flex flex-col items-center justify-center w-16 h-16 rounded-full bg-white border border-emerald-100 shadow-md shadow-emerald-100/50 hover:bg-emerald-50 hover:scale-110 transition-all duration-300 text-emerald-800 hover:text-emerald-600 z-20 group/item" style="transform: translate(-155px, 0px)">
+                    <i data-lucide="mail" class="w-4 h-4 mb-1 group-hover/item:text-emerald-500 transition-colors"></i>
+                    <span class="text-[10px] font-bold">تواصل</span>
+                </a>
             </div>
-            <p>© 2024</p>
-        </div>
-    </footer>
 
+            <!-- الدائرة الصغيرة في المنتصف (صورتك) -->
+            <div class="relative z-20 w-[250px] h-[250px] rounded-full p-1.5 bg-white/80 backdrop-blur-sm border-2 border-emerald-200 shadow-xl shadow-emerald-200/50 cursor-pointer group-hover:scale-95 transition-transform duration-300">
+                <div class="w-full h-full rounded-full overflow-hidden relative border border-emerald-100">
+                    <img src="moamen_mahrous.png" alt="صورتي" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-emerald-600/10 mix-blend-overlay"></div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- النصوص تحت الدائرة -->
+        <div class="text-center mt-6 max-w-2xl px-6 relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-sm border border-emerald-100 mb-6 text-emerald-700 font-medium text-sm animate-sway">
+                <i data-lucide="server" class="w-4 h-4"></i> جودة، أداء، وضمير مهني
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 text-emerald-950">Moamen Mahrous </h1>
+            <h2 class="text-2xl text-emerald-700/90 mb-6 font-medium">مهندس تطوير خلفي (Backend Engineer)</h2>
+            <p class="text-emerald-800/70 text-lg leading-relaxed font-light">
+                أبني أنظمة برمجية قوية، آمنة، ومستقرة بضمير، وأهتم بأدق التفاصيل لضمان نجاح أعمالك.
+            </p>
+        </div>
+    </section>
+
+    <!-- --- قسم عني والمهارات --- -->
+    <section id="about" class="py-24 relative z-10">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-white/50 backdrop-blur-xl border border-emerald-100 rounded-[2rem] p-10 md:p-14 shadow-xl shadow-emerald-100/50 leaf-shape">
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    
+                    <div class="flex-1 space-y-6">
+                        <h2 class="text-3xl font-bold flex items-center gap-3 text-emerald-900">
+                            <i data-lucide="leaf" class="w-7 h-7 text-emerald-600"></i> Skills
+                        </h2>
+                        <div class="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full"></div>
+                        <p class="text-emerald-800/80 text-lg leading-relaxed">
+                            كمهندس تطوير خلفي، أؤمن أن الجمال الحقيقي لأي تطبيق يكمن في البنية التحتية القوية التي لا يراها المستخدم. تماماً كجذور الشجرة التي تضمن ثباتها ونموها. أعمل بشغف وضمير لبناء قواعد بيانات سريعة، وواجهات برمجة تطبيقات (APIs) قابلة للتوسع. هدفي الأول والأخير هو تقديم عمل متقن يرضي العميل ويتحمل ضغط العمل الحقيقي بدون أعطال.
+                        </p>
+                    </div>
+
+                    <div class="flex-1 w-full grid grid-cols-2 gap-4">
+                        <div class="bg-white/80 hover:bg-emerald-50 transition-colors backdrop-blur-sm border border-emerald-100 rounded-2xl p-5 flex flex-col items-center justify-center text-center gap-3 shadow-sm hover:shadow-md">
+                            <div class="p-3 bg-emerald-100/50 rounded-full leaf-shape">
+                                <i data-lucide="server" class="w-5 h-5 text-emerald-600"></i>
+                            </div>
+                            <span class="font-semibold text-emerald-900 text-sm">ASP.NET & BLAZOR</span>
+                        </div>
+                        <div class="bg-white/80 hover:bg-emerald-50 transition-colors backdrop-blur-sm border border-emerald-100 rounded-2xl p-5 flex flex-col items-center justify-center text-center gap-3 shadow-sm hover:shadow-md">
+                            <div class="p-3 bg-emerald-100/50 rounded-full leaf-shape">
+                                <i data-lucide="database" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <span class="font-semibold text-emerald-900 text-sm">SQL Server</span>
+                        </div>
+                        <div class="bg-white/80 hover:bg-emerald-50 transition-colors backdrop-blur-sm border border-emerald-100 rounded-2xl p-5 flex flex-col items-center justify-center text-center gap-3 shadow-sm hover:shadow-md">
+                            <div class="p-3 bg-emerald-100/50 rounded-full leaf-shape">
+                                <i data-lucide="cpu" class="w-5 h-5 text-teal-600"></i>
+                            </div>
+                            <span class="font-semibold text-emerald-900 text-sm">System Architecture</span>
+                        </div>
+                        <div class="bg-white/80 hover:bg-emerald-50 transition-colors backdrop-blur-sm border border-emerald-100 rounded-2xl p-5 flex flex-col items-center justify-center text-center gap-3 shadow-sm hover:shadow-md">
+                            <div class="p-3 bg-emerald-100/50 rounded-full leaf-shape">
+                                <i data-lucide="terminal" class="w-5 h-5 text-lime-600"></i>
+                            </div>
+                            <span class="font-semibold text-emerald-900 text-sm">Docker</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- قسم الأعمال --- -->
+    <section id="projects" class="py-24 relative z-10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold flex items-center justify-center gap-3 text-emerald-900 mb-4">
+                    <i data-lucide="server" class="w-8 h-8 text-teal-600"></i> أعمال نفذتها بضمير
+                </h2>
+                <p class="text-emerald-700/80">مشاريع تركز على الأداء العالي، الأمان، والقدرة على التوسع.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <a href="#" class="group bg-white/60 backdrop-blur-md border border-emerald-100 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-400 shadow-lg shadow-emerald-100/40 block leaf-shape-reverse">
+                    <div class="relative h-48 overflow-hidden p-2">
+                        <div class="w-full h-full rounded-2xl overflow-hidden relative">
+                            <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800" alt="نظام إدارة الموارد" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-emerald-900 mb-2 group-hover:text-emerald-600 transition-colors">نظام إدارة الموارد (ERP)</h3>
+                        <p class="text-emerald-700/70 text-sm leading-relaxed">
+                            صممت وبنيت المعمارية الخلفية لنظام إدارة موارد لشركة كبرى، مع التركيز على حماية البيانات وتسريع أوقات الاستجابة.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Project 2 -->
+                <a href="#" class="group bg-white/60 backdrop-blur-md border border-emerald-100 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-400 shadow-lg shadow-emerald-100/40 block leaf-shape-reverse">
+                    <div class="relative h-48 overflow-hidden p-2">
+                        <div class="w-full h-full rounded-2xl overflow-hidden relative">
+                            <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="منصة تجارة إلكترونية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-emerald-900 mb-2 group-hover:text-emerald-600 transition-colors">منصة تجارة إلكترونية</h3>
+                        <p class="text-emerald-700/70 text-sm leading-relaxed">
+                            تطوير API قوي يدعم آلاف الطلبات المتزامنة بأداء عالٍ، مع دمج بوابات دفع متعددة بشكل آمن ومستقر.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Project 3 -->
+                <a href="#" class="group bg-white/60 backdrop-blur-md border border-emerald-100 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-400 shadow-lg shadow-emerald-100/40 block leaf-shape-reverse">
+                    <div class="relative h-48 overflow-hidden p-2">
+                        <div class="w-full h-full rounded-2xl overflow-hidden relative">
+                            <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800" alt="تطبيق المراسلة الفورية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-emerald-900 mb-2 group-hover:text-emerald-600 transition-colors">تطبيق المراسلة الفورية</h3>
+                        <p class="text-emerald-700/70 text-sm leading-relaxed">
+                            بناء خوادم تعتمد على WebSockets لتقديم خدمة مراسلة فورية بدون تأخير (Real-time)، مع الحفاظ على كفاءة استهلاك الموارد.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- قسم التواصل والشبكات الاجتماعية --- -->
+    <section id="contact" class="py-24 relative z-10">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-white/70 backdrop-blur-xl border border-emerald-200/60 rounded-[3rem] p-10 md:p-14 shadow-2xl shadow-emerald-100/50">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-4 text-emerald-900 flex items-center justify-center gap-3">
+                        <i data-lucide="mail" class="w-8 h-8 text-emerald-600"></i> دعنا نبني نظامك القادم
+                    </h2>
+                    <p class="text-emerald-700/80 text-lg">
+                        يسعدني جداً التواصل معك لمناقشة مشروعك، سواء كان نظاماً جديداً أو تحسيناً لأداء نظام حالي.
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-center justify-center gap-8">
+                    <h3 class="text-xl font-bold text-emerald-900">تواصل معي مباشرة عبر:</h3>
+                    
+                    <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+                        <!-- Email -->
+                        <a href="moamen8lll@gmail.com" class="group flex flex-col items-center gap-2" title="البريد الإلكتروني">
+                            <div class="w-16 h-16 rounded-2xl bg-white border border-emerald-100 text-red-500 flex items-center justify-center group-hover:bg-red-50 group-hover:border-red-200 group-hover:-translate-y-2 group-hover:shadow-lg transition-all duration-300">
+                                <i data-lucide="mail" class="w-7 h-7"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-emerald-800 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300">إيميل</span>
+                        </a>
+
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/201065157954" target="_blank" class="group flex flex-col items-center gap-2" title="واتساب">
+                            <div class="w-16 h-16 rounded-2xl bg-white border border-emerald-100 text-green-600 flex items-center justify-center group-hover:bg-green-50 group-hover:border-green-300 group-hover:-translate-y-2 group-hover:shadow-lg transition-all duration-300">
+                                <i data-lucide="message-circle" class="w-7 h-7"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-emerald-800 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300">واتساب</span>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/moamen-mahrous-23a160248" target="_blank" class="group flex flex-col items-center gap-2" title="لينكد إن">
+                            <div class="w-16 h-16 rounded-2xl bg-white border border-emerald-100 text-blue-700 flex items-center justify-center group-hover:bg-blue-50 group-hover:border-blue-300 group-hover:-translate-y-2 group-hover:shadow-lg transition-all duration-300">
+                                <i data-lucide="linkedin" class="w-7 h-7"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-emerald-800 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300">لينكد إن</span>
+                        </a>
+
+                        <!-- GitHub -->
+                        <a href="https://github.com/moamenx86" target="_blank" class="group flex flex-col items-center gap-2" title="جيت هاب">
+                            <div class="w-16 h-16 rounded-2xl bg-white border border-emerald-100 text-slate-800 flex items-center justify-center group-hover:bg-slate-50 group-hover:border-slate-300 group-hover:-translate-y-2 group-hover:shadow-lg transition-all duration-300">
+                                <i data-lucide="github" class="w-7 h-7"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-emerald-800 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300">جيت هاب</span>
+                        </a>
+                        
+                        <!-- Twitter -->
+                        <a href="https://x.com/m0__911" target="_blank" class="group flex flex-col items-center gap-2" title="تويتر">
+                            <div class="w-16 h-16 rounded-2xl bg-white border border-emerald-100 text-blue-400 flex items-center justify-center group-hover:bg-blue-50 group-hover:border-blue-300 group-hover:-translate-y-2 group-hover:shadow-lg transition-all duration-300">
+                                <i data-lucide="twitter" class="w-7 h-7"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-emerald-800 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300">تويتر</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- سكربتات التحكم بالتفاعلات (JavaScript) -->
+    <script>
+        // تهيئة أيقونات Lucide
+        lucide.createIcons();
+
+        // منطق التمرير وشريط التنقل
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = ['home', 'about', 'projects', 'contact'];
+
+        window.addEventListener('scroll', () => {
+            // إظهار/إخفاء شريط التنقل
+            if (window.scrollY > 150) {
+                navbar.classList.remove('opacity-0', '-translate-y-10', 'pointer-events-none');
+                navbar.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                navbar.classList.add('opacity-0', '-translate-y-10', 'pointer-events-none');
+                navbar.classList.remove('opacity-100', 'translate-y-0');
+            }
+
+            // تظليل القسم النشط بناءً على التمرير
+            let current = '';
+            sections.forEach(section => {
+                const element = document.getElementById(section);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    // شروط تقريبية لتحديد القسم الظاهر على الشاشة
+                    if (rect.top <= 250 && rect.bottom >= 250) {
+                        current = section;
+                    }
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-emerald-700');
+                link.classList.add('text-emerald-900/60');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.remove('text-emerald-900/60');
+                    link.classList.add('text-emerald-700');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
